@@ -6,3 +6,6 @@ __pycache__
 
 # Secret env variables
 .[Ee]nv
+
+# Tests (remove it in production)
+tests/
