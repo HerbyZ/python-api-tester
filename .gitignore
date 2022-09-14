@@ -1,0 +1,8 @@
+# Python virtual env
+[Vv]env
+
+# Python cache files
+__pycache__
+
+# Secret env variables
+.[Ee]nv
