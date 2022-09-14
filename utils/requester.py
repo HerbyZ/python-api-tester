@@ -10,7 +10,8 @@ def _get_base_url():
     url = dotenv.get_key(_BASE_URL_VARIABLE_NAME)
 
     if not url:
-        raise EnvironmentError("Failed to parse `BASE_URL` variable from .env file, check readme.md to learn more")
+        raise EnvironmentError(
+            "Failed to parse `BASE_URL` variable from .env file, check readme.md to learn more")
 
     if not url.endswith('/'):
         url += '/'
@@ -24,7 +25,7 @@ class Requester:
 
     def get(self, url='', *args, **kwargs):
         return requests.get(urljoin(self._base_url, url), *args, **kwargs)
-        
+
     def post(self, url='', *args, **kwargs):
         return requests.post(urljoin(self._base_url, url), *args, **kwargs)
 
@@ -39,6 +40,6 @@ class Requester:
 
     def path(self, url='', *args, **kwargs):
         return requests.head(urljoin(self._base_url, url), *args, **kwargs)
-    
+
     def options(self, url='', *args, **kwargs):
         return requests.options(urljoin(self._base_url, url), *args, **kwargs)
